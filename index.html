@@ -48,7 +48,7 @@
     </style>
     </head>
     <body class="bg-gray-50 dark:bg-gray-900 transition-colors">
-        <!-- Navigation -->
+       
         <nav
             class="bg-white dark:bg-gray-900 shadow-sm fixed w-full top-0 z-50 transition-colors">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -92,7 +92,8 @@
                     </button>
                 </div>
             </div>
-            <!-- Mobile Menu -->
+
+             <!-- Mobile menu i2 -->
             <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
                 <div class="px-4 py-3 space-y-3">
                     <a href="#home"
@@ -107,7 +108,7 @@
             </div>
         </nav>
 
-        <!-- Hero Section -->
+       
         <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
             <div class="max-w-6xl mx-auto text-center">
                 <h1
@@ -132,7 +133,6 @@
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about"
             class="py-20 bg-white dark:bg-gray-800 px-4 sm:px-6 lg:px-8 transition-colors">
             <div class="max-w-6xl mx-auto">
@@ -182,14 +182,13 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
+    
         <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8">
             <div class="max-w-6xl mx-auto">
                 <h2
                     class="text-4xl font-bold text-center mb-12 gradient-text">Featured
                     Projects</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project 1 -->
                     <div
                         class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover transition-colors">
                         <div
@@ -259,7 +258,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact"
             class="py-20 bg-white dark:bg-gray-800 px-4 sm:px-6 lg:px-8 transition-colors">
             <div class="max-w-3xl mx-auto text-center">
@@ -316,12 +314,9 @@
       
 
         <script>
-        // Dark mode toggle
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-
-        // Check for saved theme preference or default to light mode
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
             themeToggleLightIcon.classList.remove('hidden');
@@ -331,11 +326,8 @@
         }
 
         themeToggleBtn.addEventListener('click', function() {
-            // Toggle icons
             themeToggleDarkIcon.classList.toggle('hidden');
             themeToggleLightIcon.classList.toggle('hidden');
-
-            // Toggle dark mode
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
                 localStorage.setItem('color-theme', 'light');
@@ -345,7 +337,6 @@
             }
         });
 
-        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         
@@ -353,7 +344,6 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -364,8 +354,6 @@
                 }
             });
         });
-
-        // Intersection Observer for scroll animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -388,4 +376,5 @@
         });
     </script>
     </body>
+
 </html>
